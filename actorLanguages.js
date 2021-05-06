@@ -1,9 +1,9 @@
 //console.debug(game.actors.entries);
-let ppInfo = '';
+let ppInfo = 'Languages:\n';
 for (actor of game.actors.entries) {
     if (actor.data.type == 'character') {
         // console.debug(`actor:`, actor.data);
-        // console.debug(`skilz:`,actor.data.data.skills);
+        // console.debug(`skilz:`,actor.data.data);
         let playerName;
         for (let playerKey of Object.getOwnPropertyNames(actor.data.permission)) {
             let player = game.users.get(playerKey);
@@ -12,7 +12,7 @@ for (actor of game.actors.entries) {
                 playerName = player.name;
             }
         }
-        ppInfo += `${playerName ? playerName + ":" : ''}${actor.data.name}:PP:${actor.data.data.skills.prc.passive}\n`
+        ppInfo += `${playerName ? playerName + ":" : ''}${actor.data.name}:${actor.data.data.traits.languages.value}\n`
     }
 }
 printMessage(`${ppInfo}`);
