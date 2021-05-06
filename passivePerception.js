@@ -12,7 +12,7 @@ for (actor of game.actors.entries) {
                 playerName = player.name;
             }
         }
-        ppInfo += `${playerName ? playerName + ":" : ''}${actor.data.name}:PP:${actor.data.data.skills.per.passive}\n`
+        ppInfo += `${playerName ? playerName + ":" : ''}${actor.data.name}:PP:${actor.data.data.skills.prc.passive}\n`
     }
 }
 printMessage(`${ppInfo}`);
