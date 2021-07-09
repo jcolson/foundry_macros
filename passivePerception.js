@@ -1,6 +1,6 @@
-//console.debug(game.actors.entries);
-let ppInfo = '';
-for (actor of game.actors.entries) {
+//console.debug(game.actors);
+let ppInfo = '<div class="dnd5e chat-card"><header class="card-header flexrow"><h3 class="item-name">Passive Perception</h3></header><div class="card-content" style="display: block;">';
+for (actor of game.actors) {
     if (actor.data.type == 'character') {
         // console.debug(`actor:`, actor.data);
         // console.debug(`skilz:`,actor.data.data.skills);
@@ -12,10 +12,10 @@ for (actor of game.actors.entries) {
                 playerName = player.name;
             }
         }
-        ppInfo += `${playerName ? playerName + ":" : ''}${actor.data.name}:PP:${actor.data.data.skills.prc.passive}\n`
+        ppInfo += `<p>${playerName ? playerName + ":" : ''}<strong>${actor.data.name}</strong>:PP:${actor.data.data.skills.prc.passive}</p>`
     }
 }
-printMessage(`${ppInfo}`);
+printMessage(`${ppInfo}</div></div>`);
 function printMessage(message) {
     let chatData = {
         user: game.user._id,
