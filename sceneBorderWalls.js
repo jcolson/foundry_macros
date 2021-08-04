@@ -16,17 +16,27 @@ for (let scene of game.scenes) {
         let bw = [w + xf, h + yf, xf, h + yf];
         let lw = [xf, h + yf, xf, yf];
         //Creates walls. There is probably a cleaner way to do this.
-        await Wall.create({
+        // await Wall.create({
+        //     c: tw
+        // });
+        // await Wall.create({
+        //     c: rw
+        // });
+        // await Wall.create({
+        //     c: bw
+        // });
+        // await Wall.create({
+        //     c: lw
+        // });
+        await scene.createEmbeddedDocuments("Wall", [{
             c: tw
-        });
-        await Wall.create({
+        }, {
             c: rw
-        });
-        await Wall.create({
+        }, {
             c: bw
-        });
-        await Wall.create({
+        }, {
             c: lw
-        });
+        }
+        ]);
     }
 }
