@@ -1,6 +1,7 @@
 //usage example:
 //@Macro[scFhrpFOhgpI01MQ]{speak-actor-message-language}-Huarwar Mulphoon-You will DIE in the name of Levistus!!!  You are working with the duergar and are plotting the destruction of Ten Towns!!!-infernal
-args = $(event.target).parent()[0].outerText.split('-');
+//console.log($(event.target).parent()[0].textContent);
+args = $(event.target).parent()[0].textContent.split('-');
 args.shift();
 args.shift();
 args.shift();
