@@ -21,7 +21,7 @@ function printMessage(message) {
         user: game.user._id,
         content: message,
         blind: true,
-        whisper: game.users.entities.filter(u => u.isGM).map(u => u._id)
+        whisper: game.users.filter(u => u.isGM).map(u => u._id)
     };
 
     ChatMessage.create(chatData, {});
