@@ -14,7 +14,7 @@ for (let w of Object.values(ui.windows)) {
         topAppId = w.appId
     }
 }
-if (ui.windows[topAppId].object.data?.img) {
+if (ui.windows[topAppId]?.object?.data?.img) {
     // console.log(ui.windows[topAppId].object.data.img)
     tActor = ui.windows[topAppId].object;
 } else if (token) {
