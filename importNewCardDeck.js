@@ -23,6 +23,7 @@ async function importDeck(imagespath, deckname, backimage, nameback) {
     let cardName;
     cards.forEach(c => {
         cardName = strip_extension(basename(c, '/'));
+        cardName = decodeURIComponent(cardName)
         toCreate.push({ name: cardName, origin: deck.id, back: { img: backimage, name: nameback }, faces: [{ img: c, name: cardName }], face: 0 });
     });
     deck.createEmbeddedDocuments("Card", toCreate);
